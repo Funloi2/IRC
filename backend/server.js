@@ -6,6 +6,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const MessageRoutes = require("./routes/message");
+const ChannelRoutes = require("./routes/channel");
 
 // Middleware
 
@@ -18,6 +19,7 @@ app.use((req, res, next) => {
 
 // Routes
 app.use("/chat/", MessageRoutes);
+app.use("/chat/", ChannelRoutes)
 
 // Connect to MongoDB
 mongoose
