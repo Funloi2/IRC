@@ -9,7 +9,7 @@ const postMessage = async (req, res) => {
     try {
         if(req.body.message === '/list'){
             const channels = await Channel.find({}).sort({createdAt: -1})
-            res.status(200).json(channels)
+            res.status(200).json(messages);
         }else{
             const message = await Message.create(req.body);
             res.status(200).json(message);
